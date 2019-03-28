@@ -1,3 +1,9 @@
+<?php 
+// Conexao com o banco de dados
+include_once('classes/db.conect.class.php');
+
+ ?>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -58,14 +64,14 @@
 
           </li>
           <li class="">
-            <a href="https://www.google.com">
+            <a href="index.php">
               <i class="fa fa-tachometer-alt"></i>
               <span>Home</span> 
             </a>
           </li>
 
           <li class="">
-            <a href="#">
+            <a href="entradas.php">
               <i class="fa fa-shopping-cart"></i>
               <span>Registro de Entradas</span>
               <span class="badge badge-pill badge-danger">3</span>
@@ -73,7 +79,7 @@
 
           </li>
           <li class="">
-            <a href="#">
+            <a href="saidas.php">
               <i class="far fa-gem"></i>
               <span>Registro de Saídas</span>
             </a>        
