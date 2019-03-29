@@ -1,6 +1,6 @@
 <?php 
 // conexão com o banco de dados utilizando PDO
-include('db.conect.class.php');
+include_once('db.conect.class.php');
 
 // Classe de inserção e dados no banco 
 class SitemaFinanceiro{
@@ -45,8 +45,8 @@ class SitemaFinanceiro{
 	public function salvarEntrada(){
 
 		// Instancia do banco de dados
-		// $objDb = new ConectDb();
-		// $con = $objDb->conectaMysql();
+		//$objDb = new ConectDb();
+		//$con = $objDb->conectaMysql();
 		$con = new PDO("mysql:host=localhost;dbname=finance", "root", ""); 
 		$stmt = $con->prepare("INSERT INTO entradas (valor, data, descricao) VALUES (:valor, :data, :descricao) ");
 

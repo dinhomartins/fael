@@ -71,7 +71,7 @@ include_once('classes/db.conect.class.php');
           </li>
 
           <li class="">
-            <a href="relatorio.php">
+            <a href="index.php">
               <i class="fas fa-bell"></i>
               <span>Relatório</span> 
             </a>
@@ -113,40 +113,62 @@ include_once('classes/db.conect.class.php');
       <!-- Box-Informações -->
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
 
-        <div class="card-box">
-          <p>Entradas</p>
-          <h3>R$ 1.200,00</h3>
-        </div>
-
-      </div>  
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
-
-        <div class="card-box-2">
-          <p>Saidas</p>
-          <h3>R$ 1.200,00</h3>
-        </div>
-
-      </div>  
-
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
-
-        <div class="card-box-3">
-          <p>Ultimo registro</p>
-          <h3>R$ 1.200,00</h3>
-        </div>
+        
 
       </div> 
 
     </div>
 
 
-    <!-- Graficos -->
-    <div class="row">
-      <div class="col-md-8">
-        <canvas id="myChart" width="400" height="200"></canvas>
+    <?php 
 
-      </div>
-    </div>
+    class Relatorio{
+
+      private $valor;
+      private $data;
+      private $descicao;
+
+      public function exibirRelatorio(){
+
+        $link = new PDO("mysql:host=localhost;dbname=finance", "root", "");
+        $conexao = $link->prepare("SELECT * FROM entradas");
+        $conexao->execute();
+
+        
+        $resultado = $conexao->fetch();
+        while ($resultado = $conexao->fetch(PDO::FETCH_ASSOC)) {
+          
+          echo ' <table class="table">';
+          echo '   <thead>';
+          echo '      <tr>';
+          echo '         <th scope="col">'. $resultado['id'].'</th>';
+          echo '        <th scope="col">data</th>';
+          echo '        <th scope="col">descricao</th>';
+
+          echo '       </tr>';
+          echo '     </thead>';
+          echo '     <tbody>';
+          echo '      <tr>';
+          echo '         <th scope="row" style="width:30%" >'. $resultado['valor'].'</th>';
+          echo '        <td>'. $resultado['data'].'</td>';
+          echo '        <td>'. $resultado['descricao'].'</td>';
+          echo '       </tr>';
+
+
+          echo '     </tbody>';
+
+          echo '    </table>';
+
+
+        }
+        
+      }
+    }
+
+    $usuario = new Relatorio();
+    $usuario->exibirRelatorio();
+
+     ?>
 
     </div>
 

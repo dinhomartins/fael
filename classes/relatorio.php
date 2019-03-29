@@ -71,7 +71,7 @@ include_once('classes/db.conect.class.php');
           </li>
 
           <li class="">
-            <a href="relatorio.php">
+            <a href="index.php">
               <i class="fas fa-bell"></i>
               <span>Relatório</span> 
             </a>
@@ -113,27 +113,7 @@ include_once('classes/db.conect.class.php');
       <!-- Box-Informações -->
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
 
-        <div class="card-box">
-          <p>Entradas</p>
-          <h3>R$ 1.200,00</h3>
-        </div>
-
-      </div>  
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
-
-        <div class="card-box-2">
-          <p>Saidas</p>
-          <h3>R$ 1.200,00</h3>
-        </div>
-
-      </div>  
-
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
-
-        <div class="card-box-3">
-          <p>Ultimo registro</p>
-          <h3>R$ 1.200,00</h3>
-        </div>
+        
 
       </div> 
 
