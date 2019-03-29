@@ -110,65 +110,59 @@ include_once('classes/db.conect.class.php');
     <h5>Resumo</h5>
     <hr>
     <div class="row">
-      <!-- Box-Informações -->
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
-
-        
-
-      </div> 
-
+    <!-- Box-Informações -->
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
+    </div>
     </div>
 
 
     <?php 
 
+    // Classe relatorio exebi os dados em uma tabela
     class Relatorio{
 
       private $valor;
       private $data;
       private $descicao;
 
+      // Função SELECT no banco de dados
       public function exibirRelatorio(){
 
         $link = new PDO("mysql:host=localhost;dbname=finance", "root", "");
         $conexao = $link->prepare("SELECT * FROM entradas");
         $conexao->execute();
 
-        
         $resultado = $conexao->fetch();
-        while ($resultado = $conexao->fetch(PDO::FETCH_ASSOC)) {
+
+        // Leitura dos Dados no banco utilizando FETCH
+        while ($resultado = $conexao->fetch(PDO::FETCH_ASSOC)): ?>
           
-          echo ' <table class="table">';
-          echo '   <thead>';
-          echo '      <tr>';
-          echo '         <th scope="col">'. $resultado['id'].'</th>';
-          echo '        <th scope="col">data</th>';
-          echo '        <th scope="col">descricao</th>';
-
-          echo '       </tr>';
-          echo '     </thead>';
-          echo '     <tbody>';
-          echo '      <tr>';
-          echo '         <th scope="row" style="width:30%" >'. $resultado['valor'].'</th>';
-          echo '        <td>'. $resultado['data'].'</td>';
-          echo '        <td>'. $resultado['descricao'].'</td>';
-          echo '       </tr>';
-
-
-          echo '     </tbody>';
-
-          echo '    </table>';
-
-
-        }
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"><?php echo $resultado['id'] ?> </th>
+                <th scope="col">data</th>
+                <th scope="col">descricao</th>
+              </tr>
+            </thead>
+          <tbody>
+            <tr>
+              <th scope="row" style="width:30%" ><?php  echo $resultado['valor'] ?> </th>
+              <td><?php echo  $resultado['data']?> </td>
+              <td><?php echo  $resultado['descricao']?> </td>
+            </tr>
+          <?php endWhile ?>
+          </tbody>
+          </table>
         
-      }
-    }
-
-    $usuario = new Relatorio();
-    $usuario->exibirRelatorio();
-
-     ?>
+      <?php 
+                }   
+              }
+        ?>
+    <?php 
+      $usuario = new Relatorio();
+      $usuario->exibirRelatorio(); 
+    ?>
 
     </div>
 
@@ -184,5 +178,4 @@ include_once('classes/db.conect.class.php');
         crossorigin="anonymous"></script>
     <script src="chart.js" ></script>
 </body>
-
 </html>
