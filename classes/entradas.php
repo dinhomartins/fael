@@ -68,7 +68,9 @@ class SitemaFinanceiro{
 	}
 }
 
-// Orientação a objetos
+
+if(isset($_POST)){
+	// Orientação a objetos
 // a variavel $usuario recebe a nova instancia da classe SitemaFinanceiro
 $usuario = new SitemaFinanceiro();
 
@@ -79,5 +81,10 @@ $usuario->setDescricao($_POST['descricao']);
 
 // Recebe a função salvarEntrada que está dentro da classe SitemaFinanceiro
 $usuario->salvarEntrada();
+}else{
+	echo 'Erro';
+}
+
+
 
  ?>
