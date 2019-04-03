@@ -75,7 +75,7 @@ if(isset($_POST)){
 $usuario = new SitemaFinanceiro();
 
 // Recebe os dados do FORM via metodo Set
-$usuario->setEntrada($_POST['entrada']);
+$usuario->setEntrada($_POST['dinheiro']);
 $usuario->setData($_POST['data']);
 $usuario->setDescricao($_POST['descricao']);
 

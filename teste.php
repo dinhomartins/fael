@@ -2,7 +2,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js" ></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>  
 
 
 <!DOCTYPE html>
@@ -116,7 +117,12 @@
       <button id="demo" onclick="verifica()">Try it</button>
       <p id="demo">Click the button to change the text in this paragraph.</p>
 
-
+<input type="text" name="telefone" class="telefone form-control" placeholder="(17) 9 9173-3578" />
+<label for="dinheiro">R$</label><input type="text" id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" />
+<input type="text" id="estado" name="estado" class="estado form-control" placeholder="UF" />
+<script>
+  $('.dinheiro').mask('#.##0,00', {reverse: true});
+</script>
     </form>
 
     </main>

@@ -13,80 +13,11 @@ include('header.php');
     <h5>Resumo</h5>
     <hr>
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4"> 
-      <h3>Valor Total: </h3>        
+      <div class="col-md-12"> 
+        <h3>Valor Total: R$ <?php include('classes/relatorio.php') ?>  </h3>   
       </div>
     </div>
-
-
-    <?php 
-
-// Classe relatorio exebi os dados em uma tabela
-    class Relatorio
-      {
-
-        private $valor;
-        private $data;
-        private $descicao;
-
-
-        public function exibirRelatorio()
-        {
-
-          $link = new PDO("mysql:host=localhost;dbname=finance", "root", "");
-          $conexao = $link->prepare("SELECT * FROM entradas");
-          $stmt = $link->prepare("SELECT * FROM entradas");
-
-          $conexao->execute();
-          $stmt->execute();
-
-          $total = 0;
-
-          while ($results = $conexao->fetch(PDO::FETCH_ASSOC)) 
-          {
-            $total += $results['valor'];
-          }
-
-          echo $total;
-
-        ?>
-
-
-
-        <table class="table">
-          <?php  while ($resultado = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-            <thead>
-              <tr>
-                <th scope="col"><?php echo $resultado['id'] ?> </th>
-                <th scope="col">data</th>
-                <th scope="col">descricao</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" style="width:30%" ><?php  echo $resultado['valor'] ?> </th>
-                <td><?php echo  $resultado['data']?> </td>
-                <td><?php echo  $resultado['descricao']?> </td>
-
-              </tr>
-              <?php endWhile ?>
-            </tbody>
-          </table>
-
-          <?php 
-        }  
-        
-
-      }
-      ?>
-      <?php 
-      $usuario = new Relatorio();
-      $usuario->exibirRelatorio();
-
-      ?>
-
-    </div>
-
+    </div
   </main>
   <!-- Fim do container" -->
 </div>

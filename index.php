@@ -2,11 +2,9 @@
 // Conexao com o banco de dados
 include_once('classes/db.conect.class.php');
 include('header.php');
- ?>
+?>
 
-
- <!-- Menu Lateral  -->
- <main class="page-content">
+<main class="page-content">
   <div class="container-fluid">
     <h2>FAEL - Controle Financeiro Pessoal - Programação WEB</h2>
     <hr>
@@ -15,7 +13,6 @@ include('header.php');
     <div class="row">
       <!-- Box-Informações -->
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
-
         <div class="card-box">
           <p>Entrada</p>
           <h3>
@@ -25,8 +22,8 @@ include('header.php');
             ?>
           </h3>
         </div>
+      </div>
 
-      </div>  
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
         <div class="card-box-2">
           <p>Saidas</p>
@@ -47,23 +44,20 @@ include('header.php');
     <div class="row">
       <div class="col-md-8">
         <canvas id="myChart" width="400" height="200"></canvas>
-
       </div>
     </div>
-
   </div>
-
 </main>
 <!-- Fim do container" -->
 </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="chart.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
+<script src="chart.js" ></script>
 </body>
 
 </html>
