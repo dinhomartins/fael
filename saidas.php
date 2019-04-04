@@ -10,16 +10,16 @@ include('header.php');
             <h2>FAEL - Controle Financeiro Pessoal - Programação WEB</h2>
             <hr>
 
-<h5>Cadastro de entradas financeiras</h5>
+<h5>Cadastro de retiradas financeiras</h5>
 <hr>
 <div class="row">
   <!-- Box-Informações -->
   <div class="col-md-6">
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Entrada</label>
-        <input type="number" class="form-control" name="entrada" id="entrada" aria-describedby="entrada" placeholder="Valores ">
-        <small id="entrada" class="form-text text-muted">Informe aqui todos os valores recebidos.</small>
+    <form method="POST" action="classes/retirada.php">
+      <div class="form-group"  >
+        <label for="exampleInputEmail1">Retirada</label>
+        <input type="text" class="form-control" name="retirada" id="retirada" aria-describedby="retirada" placeholder="Valores ">
+        <small id="entrada" class="form-text text-muted">Informe aqui todos os valores retirados.</small>
       </div>
       <div class="form-group">
         <label >Data</label>
@@ -27,8 +27,8 @@ include('header.php');
         max="2040-12-31" class="form-control">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Descrição</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="descricao">Descrição</label>
+        <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
       </div>
 
       <button type="submit" class="btn btn-primary">Salvar</button>

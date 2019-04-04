@@ -27,14 +27,19 @@ include('header.php');
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
         <div class="card-box-2">
           <p>Saidas</p>
-          <h3>R$ 1.200,00</h3>
+          <h3>
+            <?php 
+            include_once('classes/relatorioRetiradas.php');
+             ?>
+
+          </h3>
         </div>
       </div>  
 
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
         <div class="card-box-3">
           <p>Ultimo registro</p>
-          <h3>R$ 1.200,00</h3>
+          <h3>R$</h3>
         </div>
       </div> 
     </div>
@@ -43,7 +48,7 @@ include('header.php');
     <!-- Graficos -->
     <div class="row">
       <div class="col-md-8">
-        <canvas id="myChart" width="400" height="200"></canvas>
+        <!-- <canvas id="myChart" width="400" height="200"></canvas> -->
       </div>
     </div>
   </div>
@@ -59,5 +64,4 @@ crossorigin="anonymous"></script>
 crossorigin="anonymous"></script>
 <script src="chart.js" ></script>
 </body>
-
 </html>
