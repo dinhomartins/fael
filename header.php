@@ -74,15 +74,15 @@
 
           <li class="">
             <a href="entradas.php">
-              <i class="fa fa-shopping-cart"></i>
+              <i class="far fa-gem"></i>
               <span>Registro de Entradas</span>
-              <span class="badge badge-pill badge-danger">3</span>
+              <span class="badge badge-pill badge-danger"><?php include('classes/contadorDeRegistros.php') ?></span>
             </a>
 
           </li>
           <li class="">
             <a href="saidas.php">
-              <i class="far fa-gem"></i>
+              <i class=" fa fa-shopping-cart"></i>
               <span>Registro de Saídas</span>
             </a>        
           </li>          

@@ -1,6 +1,6 @@
 <?php 
 // conexão com o banco de dados utilizando PDO
-include_once('db.conect.class.php');
+require_once('db.conect.class.php');
 
 // Classe de inserção e dados no banco 
 class SitemaFinanceiro{

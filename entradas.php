@@ -96,10 +96,6 @@ $('#salvar').click(function(){
   alert("Por favor preencha o campo Descrição.");
   campo_vazio = true;
   }
-
-
-
-
   if(campo_vazio) return false;
 });
 

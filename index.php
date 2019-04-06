@@ -38,8 +38,12 @@ include('header.php');
 
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
         <div class="card-box-3">
-          <p>Ultimo registro</p>
-          <h3>R$</h3>
+          <p>Saldo</p>
+          <h3>
+            <?php include_once('classes/relatorioTotal.php') 
+            ?>
+              
+            </h3>
         </div>
       </div> 
     </div>

@@ -4,11 +4,14 @@ include_once('classes/db.conect.class.php');
 include('header.php');
  ?>
 
-        <!-- Menu Lateral  -->
-        <main class="page-content">
-          <div class="container-fluid">
-            <h2>FAEL - Controle Financeiro Pessoal - Programação WEB</h2>
-            <hr>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
+
+<!-- Menu Lateral  -->
+<main class="page-content">
+<div class="container-fluid">
+<h2>FAEL - Controle Financeiro Pessoal - Programação WEB</h2>
+<hr>
 
 <h5>Cadastro de retiradas financeiras</h5>
 <hr>
@@ -31,7 +34,7 @@ include('header.php');
         <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="submit" id="salvar" class="btn btn-primary">Salvar</button>
     </form>
   </div>
 
@@ -42,7 +45,56 @@ include('header.php');
 </main>
 <!-- Fim do container" -->
 </div>
+<script>
+$('.retirada').mask('#,00', {reverse: true});
 
+$('#salvar').click(function(){
+  
+  // alert('clicou');
+  var campo_vazio = false;
+  //     nome do campo
+  if($('#retirada').val() == ''){
+  // se o campo nome estiver vazio mude a cor para
+  // muda a bordar do campo para vermelhor caso estaja vezio
+  $('#retirada').css({'border-color':'#A94442'});
+  campo_vazio = true;
+  } else {
+  $('#retirada').css({'border-color':'##CCC'});
+  }
+  if($('#retirada').val() == ''){
+  alert("Por favor preencha o campo entrada de valores.");
+  campo_vazio = true;
+  }
+
+  if($('#data').val() == ''){
+  // se o campo nome estiver vazio mude a cor para
+  // muda a bordar do campo para vermelhor caso estaja vezio
+  $('#data').css({'border-color':'#A94442'});
+  campo_vazio = true;
+  } else {
+  $('#data').css({'border-color':'##CCC'});
+  }
+  if($('#data').val() == ''){
+  alert("Por favor preencha o campo Data.");
+  campo_vazio = true;
+  }
+
+  if($('#descricao').val() == ''){
+  // se o campo nome estiver vazio mude a cor para
+  // muda a bordar do campo para vermelhor caso estaja vezio
+  $('#descricao').css({'border-color':'#A94442'});
+  campo_vazio = true;
+  } else {
+  $('#descricao').css({'border-color':'##CCC'});
+  }
+  if($('#descricao').val() == ''){
+  alert("Por favor preencha o campo Descrição.");
+  campo_vazio = true;
+  }
+  if(campo_vazio) return false;
+});
+
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
