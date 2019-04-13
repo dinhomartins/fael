@@ -13,6 +13,7 @@ class ConectDb
 			echo $e->getMessage();
 
 		}
+		return $con;
 	}
 }
 ?>
